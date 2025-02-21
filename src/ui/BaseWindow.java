@@ -3,9 +3,6 @@ package ui;
 import javax.swing.JFrame;
 
 abstract class BaseWindow extends JFrame {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1413240366994601867L;
 
 
