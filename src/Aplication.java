@@ -1,5 +1,6 @@
-import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+
+import ui.PasswordGenerator;
 
 public class Aplication {
 	public static void main(String[] args) {
@@ -7,9 +8,7 @@ public class Aplication {
 			
 			@Override
 			public void run() {
-				JFrame main = new JFrame();
-				main.setSize(400, 400);
-				main.setVisible(true);
+				new PasswordGenerator();
 			}
 		});
 	}
