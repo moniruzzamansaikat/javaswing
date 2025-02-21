@@ -2,7 +2,7 @@ package ui;
 
 import javax.swing.JFrame;
 
-public class BaseWindow extends JFrame {
+abstract class BaseWindow extends JFrame {
 	/**
 	 * 
 	 */
@@ -10,7 +10,7 @@ public class BaseWindow extends JFrame {
 
 
 	/** default width **/
-	private int width = 400;
+	private int width = 500;
 
 	
 	/** default height **/
@@ -24,20 +24,17 @@ public class BaseWindow extends JFrame {
 	{
 		setTitle(title);
 		setSize(this.width, this.height);
-		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setResizable(isResizable);
 		addComponents();
 	}
 	
-	protected void addComponents()
-	{
-		
-	}
+	abstract protected void addComponents();
 	
 	public void setWidth(int width) 
 	{
 		this.width = width;
+		setSize(this.width, this.height);
 	}
 	
 	public int getWidth() 
@@ -49,6 +46,7 @@ public class BaseWindow extends JFrame {
 	public void setHeight(int height) 
 	{
 		this.height= height;
+		setSize(this.width, this.height);
 	}
 	
 	public int getHeight() 
@@ -59,6 +57,7 @@ public class BaseWindow extends JFrame {
 	public void setResiable(boolean yesOrNo) 
 	{
 		this.isResizable = yesOrNo;
+		super.setResizable(yesOrNo);
 	}
 	
 	
